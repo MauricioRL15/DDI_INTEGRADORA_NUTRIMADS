@@ -3,8 +3,11 @@
 ## Documento de Requerimientos de software *NUTRIMADS*
 ### 02/05/2023
 
-![](https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/logo_transparent.png?raw=true)
-> NUTRIMADS logo.
+![](https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/logo_empresa.png?raw=true)
+> NUTRIMADS logo Empresa.
+
+![](https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/logo_app.png?raw=true)
+> NUTRIMADS logo App.
 
 #### Versión 1.0.0
 
