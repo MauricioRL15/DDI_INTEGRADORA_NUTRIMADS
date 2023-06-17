@@ -16,7 +16,7 @@
 
 | Fecha      | Versión  |  Autor| Organización | Descripción |
 |------------|----------|---------------|--------------|-------------|
-| 11/06/2023 | 1.0      | Daniel Arroyo Méndez  |   Souka       |Primer versión de NUTRIMADS|
+| 11/06/2023 | 1.0      | Daniel Arroyo Méndez  |   NUTRIMADS       |Primer versión de NUTRIMADS|
 
 ## Informacion del proyecto
 
