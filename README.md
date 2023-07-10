@@ -117,19 +117,20 @@ Estas funcionalidades pueden ayudar a los usuarios a tener un mayor control y co
 
 ### Clases y características de usuario
 <div style="text-align: justify">
-1- *** Usuarios regulares conscientes de su alimentación: ***
+
+1- ***Usuarios regulares conscientes de su alimentación:***
 Funcionalidades relevantes: Búsqueda de alimentos, seguimiento de alimentos, información nutricional detallada, recomendaciones de alimentos, historial y análisis.
 
-2- *** Usuarios que siguen una dieta específica: ***
+2- ***Usuarios que siguen una dieta específica:***
 Funcionalidades relevantes: Información nutricional detallada, recomendaciones de alimentos dentro de las restricciones dietéticas.
 
-3- *** Usuarios que buscan perder o controlar su peso: ***
+3- ***Usuarios que buscan perder o controlar su peso:***
 Funcionalidades relevantes: Seguimiento de alimentos, información nutricional detallada, metas nutricionales personalizadas (como calorías diarias), historial y análisis para monitorear el progreso.
 
-4- *** Usuarios con restricciones de nutrientes: ***
+4- ***Usuarios con restricciones de nutrientes:***
 Funcionalidades relevantes: Seguimiento de alimentos, información nutricional detallada, recomendaciones de alimentos dentro de las restricciones dietéticas.
 
-5- *** Administrador: ***
+5- ***Administrador:***
 Este usuario posee privilegios especiales para la aplicación, su función principal es supervisar y gestionar el funcionamiento general de la aplicación. Entre sus principales características se encuentran gestión de usuarios, supervisión, análisis, mantenimiento, actualización y soporte técnico.
 <div/>
 
@@ -138,13 +139,13 @@ Este usuario posee privilegios especiales para la aplicación, su función princ
 #### Interfaces de Usuario
 | Interfaz | Descripción |
 | :----------------------------------: | :----------------------------------: |
-|<img src="https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/splashNUTRIMADS.jpg?raw=true" alt="Splash" width="180" />|  *** Splash *** <br>El usuario verá esta pantalla al inicializar la aplicación<br>Posee un botón para entrar por completo a utilizar todas las funciones de la app |
-|<img src="https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/menuNUTRIMADS.jpg?raw=true" alt="Menu" width="180" />  | *** Menú de opciones *** <br> El usuario debe seleccionar la función que utilizará |
-|<img src="https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/busquedaNUTRIMADS.jpg?raw=true" alt="Busqueda" width="180" />| *** Busqueda ***<br>Busqueda de alimentos disponibles en la base de datos |
-| <img src="https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/contadorNUTRIMADS.jpg?raw=true" alt="Contador" width="180" /> |*** Contador de Nutrientes *** <br>Proporciona información detallada sobre el alimento en cuestión|
-| <img src="https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/recordatorioNUTRIMADS.jpg?raw=true" alt="Recordatorio" width="180" /> |*** Recordatorio ***<br>Funcion que permite al usuario establecer una alarma para recordar<br> la hora en que debe comer algún alimento y/o tomar un medicamento|
-| <img src="https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/asistenteNUTRIMADS.jpg?raw=true" alt="Asistente" width="180" /> |*** Asistente de voz ***<br>Ya que la pantalla del dispositivo SmartWatch es muy pequeña para <br>escribir esta función facilitará la busqueda de alimentos específicos|
-| <img src="https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/recomendacionesNUTRIMADS.jpg?raw=true" alt="Asistente" width="180" /> |*** Recomendaciones ***<br> Sugerencias para los desarrolladores sobre alimentos saludables <br>que podrían incluir en la base de datos|
+|<img src="https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/splashNUTRIMADS.jpg?raw=true" alt="Splash" width="180" />|  ***Splash*** <br>El usuario verá esta pantalla al inicializar la aplicación<br>Posee un botón para entrar por completo a utilizar todas las funciones de la app |
+|<img src="https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/menuNUTRIMADS.jpg?raw=true" alt="Menu" width="180" />  | ***Menú de opciones*** <br> El usuario debe seleccionar la función que utilizará |
+|<img src="https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/busquedaNUTRIMADS.jpg?raw=true" alt="Busqueda" width="180" />| ***Busqueda***<br>Busqueda de alimentos disponibles en la base de datos |
+| <img src="https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/contadorNUTRIMADS.jpg?raw=true" alt="Contador" width="180" /> |***Contador de Nutrientes*** <br>Proporciona información detallada sobre el alimento en cuestión|
+| <img src="https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/recordatorioNUTRIMADS.jpg?raw=true" alt="Recordatorio" width="180" /> |***Recordatorio***<br>Funcion que permite al usuario establecer una alarma para recordar<br> la hora en que debe comer algún alimento y/o tomar un medicamento|
+| <img src="https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/asistenteNUTRIMADS.jpg?raw=true" alt="Asistente" width="180" /> |***Asistente de voz***<br>Ya que la pantalla del dispositivo SmartWatch es muy pequeña para <br>escribir esta función facilitará la busqueda de alimentos específicos|
+| <img src="https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/recomendacionesNUTRIMADS.jpg?raw=true" alt="Asistente" width="180" /> |***Recomendaciones***<br> Sugerencias para los desarrolladores sobre alimentos saludables <br>que podrían incluir en la base de datos|
 
 #### Interfaces de Hardware
 Compatibilidad con dispositivos:
@@ -155,12 +156,13 @@ Compatibilidad con dispositivos:
 ### Entorno Operativo
 
 <div style="text-align: justify">
-*** WearOS :***
+
+***WearOS :***
 El entorno operativo en el que se desenvolverá la app Wear OS ofrece una plataforma adaptada para dispositivos portátiles con funcionalidades específicas y una interfaz de usuario diseñada para su uso en pantallas pequeñas.
 
-*** App Web: ***
+***App Web:***
 Puede ser accedida y utilizada en una amplia gama de dispositivos, incluyendo computadoras de escritorio, laptops, tabletas y teléfonos móviles. Los usuarios pueden acceder a la aplicación a través de un navegador web en estos dispositivos.
 
-*** Voice Assistant Alexa: ***
+***Voice Assistant Alexa:***
 La interfaz de usuario en el entorno de Alexa se basa principalmente en interacciones de voz. Los usuarios interactúan con la aplicación utilizando comandos de voz para realizar acciones, hacer preguntas o recibir información.
 <div/>
