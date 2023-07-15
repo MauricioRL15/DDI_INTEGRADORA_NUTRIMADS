@@ -1,0 +1,2427 @@
+{
+  "paper": {
+    "name": "A4",
+    "leftMargin": 0.5,
+    "rightMargin": 0.5,
+    "topMargin": 0.5,
+    "bottomMargin": 0.5,
+    "isPortriat": true
+  },
+  "modelVersion": 2.01,
+  "defaultSchema": "default",
+  "server": {
+    "objectType": "Server_LOGICAL",
+    "name": "Default",
+    "schemas": [
+      {
+        "objectType": "Schema_LOGICAL",
+        "name": "default",
+        "tables": [
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "bd_nutrimads.alimento",
+            "comment": "",
+            "oldName": "alimento",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Nombre",
+                "type": "NATIONAL CHARACTER VARYING",
+                "length": 25,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Nombre"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Cantidad",
+                "type": "FLOAT",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Cantidad"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Grupo_alimenticio",
+                "type": "NATIONAL CHARACTER VARYING",
+                "length": 255,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Grupo_alimenticio"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Estatus",
+                "type": "CHARACTER VARYING",
+                "length": 1,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "b'1'",
+                "comment": "",
+                "oldName": "Estatus"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Registro",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Registro"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Actualizacion",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": true,
+                "defaultType": "Null",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Actualizacion"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "ID"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "bd_nutrimads.alimento_has_criterio",
+            "comment": "",
+            "oldName": "alimento_has_criterio",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "alimento_ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "alimento_ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "criterio_ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "criterio_ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Inicio",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Inicio"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Fin",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Fin"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_alimento_has_criterio_alimento",
+                "fields": [
+                  "alimento_ID"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "bd_nutrimads.alimento",
+                "referencedFields": [
+                  "ID"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": "fk_alimento_has_criterio_alimento"
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_alimento_has_criterio_criterio1",
+                "fields": [
+                  "criterio_ID"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "bd_nutrimads.criterio",
+                "referencedFields": [
+                  "ID"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": "fk_alimento_has_criterio_criterio1"
+              }
+            ],
+            "indexes": [
+              {
+                "objectType": "Index_LOGICAL",
+                "name": "fk_alimento_has_criterio_criterio1_idx",
+                "fields": [
+                  "criterio_ID"
+                ],
+                "type": "Default",
+                "comment": "",
+                "oldName": "fk_alimento_has_criterio_criterio1_idx"
+              },
+              {
+                "objectType": "Index_LOGICAL",
+                "name": "fk_alimento_has_criterio_alimento_idx",
+                "fields": [
+                  "alimento_ID"
+                ],
+                "type": "Default",
+                "comment": "",
+                "oldName": "fk_alimento_has_criterio_alimento_idx"
+              }
+            ],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "alimento_ID",
+                "criterio_ID"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "bd_nutrimads.componente",
+            "comment": "",
+            "oldName": "componente",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Nombre",
+                "type": "NATIONAL CHARACTER VARYING",
+                "length": 50,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Nombre"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Componente_Pradre",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": true,
+                "defaultType": "Null",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Componente_Pradre"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Unidad_medida",
+                "type": "NATIONAL CHARACTER VARYING",
+                "length": 255,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Unidad_medida"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Estatus",
+                "type": "CHARACTER VARYING",
+                "length": 1,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "b'1'",
+                "comment": "",
+                "oldName": "Estatus"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Registro",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Registro"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Actualizacion",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": true,
+                "defaultType": "Null",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Actualizacion"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_ComponenteAlimento",
+                "fields": [
+                  "ID"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "bd_nutrimads.alimento",
+                "referencedFields": [
+                  "ID"
+                ],
+                "sourceCardinality": "ZeroOrOneRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": "fk_ComponenteAlimento"
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "ID"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "bd_nutrimads.componente_has_alimento",
+            "comment": "",
+            "oldName": "componente_has_alimento",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "componente_ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "componente_ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "alimento_ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "alimento_ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Inicio",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Inicio"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Fin",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Fin"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_componente_has_alimento_alimento1",
+                "fields": [
+                  "alimento_ID"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "bd_nutrimads.alimento",
+                "referencedFields": [
+                  "ID"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": "fk_componente_has_alimento_alimento1"
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_componente_has_alimento_componente1",
+                "fields": [
+                  "componente_ID"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "bd_nutrimads.componente",
+                "referencedFields": [
+                  "ID"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": "fk_componente_has_alimento_componente1"
+              }
+            ],
+            "indexes": [
+              {
+                "objectType": "Index_LOGICAL",
+                "name": "fk_componente_has_alimento_alimento1_idx",
+                "fields": [
+                  "alimento_ID"
+                ],
+                "type": "Default",
+                "comment": "",
+                "oldName": "fk_componente_has_alimento_alimento1_idx"
+              },
+              {
+                "objectType": "Index_LOGICAL",
+                "name": "fk_componente_has_alimento_componente1_idx",
+                "fields": [
+                  "componente_ID"
+                ],
+                "type": "Default",
+                "comment": "",
+                "oldName": "fk_componente_has_alimento_componente1_idx"
+              }
+            ],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "componente_ID",
+                "alimento_ID"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "bd_nutrimads.consumo",
+            "comment": "",
+            "oldName": "consumo",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Cantidad",
+                "type": "FLOAT",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Cantidad"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Tipo",
+                "type": "NATIONAL CHARACTER VARYING",
+                "length": 255,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Tipo"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Estatus",
+                "type": "CHARACTER VARYING",
+                "length": 1,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "b'1'",
+                "comment": "",
+                "oldName": "Estatus"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Registro",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Registro"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Actualizacion",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": true,
+                "defaultType": "Null",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Actualizacion"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Usuario_ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Usuario_ID"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "FK_consumo_usuario",
+                "fields": [
+                  "Usuario_ID"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "bd_nutrimads.usuario",
+                "referencedFields": [
+                  "ID"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": "FK_consumo_usuario"
+              }
+            ],
+            "indexes": [
+              {
+                "objectType": "Index_LOGICAL",
+                "name": "FK_consumo_usuario",
+                "fields": [
+                  "Usuario_ID"
+                ],
+                "type": "Default",
+                "comment": "",
+                "oldName": "FK_consumo_usuario"
+              }
+            ],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "ID"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "bd_nutrimads.consumo_has_alimento",
+            "comment": "",
+            "oldName": "consumo_has_alimento",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Consumo_ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Consumo_ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Alimento_ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Alimento_ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Inicio",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Inicio"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Fin",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Fin"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "consumo_has_alimento_ibfk_1",
+                "fields": [
+                  "Consumo_ID"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "bd_nutrimads.consumo",
+                "referencedFields": [
+                  "ID"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": "consumo_has_alimento_ibfk_1"
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "consumo_has_alimento_ibfk_2",
+                "fields": [
+                  "Alimento_ID"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "bd_nutrimads.alimento",
+                "referencedFields": [
+                  "ID"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": "consumo_has_alimento_ibfk_2"
+              }
+            ],
+            "indexes": [
+              {
+                "objectType": "Index_LOGICAL",
+                "name": "Alimento_ID",
+                "fields": [
+                  "Alimento_ID"
+                ],
+                "type": "Default",
+                "comment": "",
+                "oldName": "Alimento_ID"
+              }
+            ],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "Consumo_ID",
+                "Alimento_ID"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "bd_nutrimads.criterio",
+            "comment": "",
+            "oldName": "criterio",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Nombre",
+                "type": "NATIONAL CHARACTER VARYING",
+                "length": 65,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Nombre"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Descripcion",
+                "type": "NATIONAL CHARACTER VARYING",
+                "length": 200,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Descripcion"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Valor_Maximo",
+                "type": "FLOAT",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Valor_Maximo"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Valor_Minimo",
+                "type": "FLOAT",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Valor_Minimo"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Estatus",
+                "type": "NATIONAL CHARACTER VARYING",
+                "length": 255,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "'Saludable'",
+                "comment": "",
+                "oldName": "Estatus"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Registro",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Registro"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Actualizacion",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": true,
+                "defaultType": "Null",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Actualizacion"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "ID"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "bd_nutrimads.criterio_has_usuario",
+            "comment": "",
+            "oldName": "criterio_has_usuario",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "criterio_ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "criterio_ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "usuario_ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "usuario_ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Inicio",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Inicio"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Fin",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Fin"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_criterio_has_usuario_criterio1",
+                "fields": [
+                  "criterio_ID"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "bd_nutrimads.criterio",
+                "referencedFields": [
+                  "ID"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": "fk_criterio_has_usuario_criterio1"
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_criterio_has_usuario_usuario1",
+                "fields": [
+                  "usuario_ID"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "bd_nutrimads.usuario",
+                "referencedFields": [
+                  "ID"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": "fk_criterio_has_usuario_usuario1"
+              }
+            ],
+            "indexes": [
+              {
+                "objectType": "Index_LOGICAL",
+                "name": "fk_criterio_has_usuario_usuario1_idx",
+                "fields": [
+                  "usuario_ID"
+                ],
+                "type": "Default",
+                "comment": "",
+                "oldName": "fk_criterio_has_usuario_usuario1_idx"
+              },
+              {
+                "objectType": "Index_LOGICAL",
+                "name": "fk_criterio_has_usuario_criterio1_idx",
+                "fields": [
+                  "criterio_ID"
+                ],
+                "type": "Default",
+                "comment": "",
+                "oldName": "fk_criterio_has_usuario_criterio1_idx"
+              }
+            ],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "criterio_ID",
+                "usuario_ID"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "bd_nutrimads.factor",
+            "comment": "",
+            "oldName": "factor",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Nombre",
+                "type": "NATIONAL CHARACTER VARYING",
+                "length": 50,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Nombre"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Estatus",
+                "type": "NATIONAL CHARACTER VARYING",
+                "length": 255,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "'Temprano'",
+                "comment": "",
+                "oldName": "Estatus"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Registro",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Registro"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Actualizacion",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": true,
+                "defaultType": "Null",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Actualizacion"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "ID"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "bd_nutrimads.factor_has_componente",
+            "comment": "",
+            "oldName": "factor_has_componente",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "factor_ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "factor_ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "componente_ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "componente_ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Inicio",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Inicio"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Fin",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Fin"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_factor_has_componente_componente1",
+                "fields": [
+                  "componente_ID"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "bd_nutrimads.componente",
+                "referencedFields": [
+                  "ID"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": "fk_factor_has_componente_componente1"
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_factor_has_componente_factor1",
+                "fields": [
+                  "factor_ID"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "bd_nutrimads.factor",
+                "referencedFields": [
+                  "ID"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": "fk_factor_has_componente_factor1"
+              }
+            ],
+            "indexes": [
+              {
+                "objectType": "Index_LOGICAL",
+                "name": "fk_factor_has_componente_componente1_idx",
+                "fields": [
+                  "componente_ID"
+                ],
+                "type": "Default",
+                "comment": "",
+                "oldName": "fk_factor_has_componente_componente1_idx"
+              },
+              {
+                "objectType": "Index_LOGICAL",
+                "name": "fk_factor_has_componente_factor1_idx",
+                "fields": [
+                  "factor_ID"
+                ],
+                "type": "Default",
+                "comment": "",
+                "oldName": "fk_factor_has_componente_factor1_idx"
+              }
+            ],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "factor_ID",
+                "componente_ID"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "bd_nutrimads.factor_has_usuario",
+            "comment": "",
+            "oldName": "factor_has_usuario",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "factor_ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "factor_ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "usuario_ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "usuario_ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Inicio",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Inicio"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Fin",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Fin"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_factor_has_usuario_factor1",
+                "fields": [
+                  "factor_ID"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "bd_nutrimads.factor",
+                "referencedFields": [
+                  "ID"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": "fk_factor_has_usuario_factor1"
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_factor_has_usuario_usuario1",
+                "fields": [
+                  "usuario_ID"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "bd_nutrimads.usuario",
+                "referencedFields": [
+                  "ID"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": "fk_factor_has_usuario_usuario1"
+              }
+            ],
+            "indexes": [
+              {
+                "objectType": "Index_LOGICAL",
+                "name": "fk_factor_has_usuario_usuario1_idx",
+                "fields": [
+                  "usuario_ID"
+                ],
+                "type": "Default",
+                "comment": "",
+                "oldName": "fk_factor_has_usuario_usuario1_idx"
+              },
+              {
+                "objectType": "Index_LOGICAL",
+                "name": "fk_factor_has_usuario_factor1_idx",
+                "fields": [
+                  "factor_ID"
+                ],
+                "type": "Default",
+                "comment": "",
+                "oldName": "fk_factor_has_usuario_factor1_idx"
+              }
+            ],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "factor_ID",
+                "usuario_ID"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "bd_nutrimads.rol",
+            "comment": "",
+            "oldName": "rol",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Nombre",
+                "type": "NATIONAL CHARACTER VARYING",
+                "length": 50,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Nombre"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Descripcion",
+                "type": "NATIONAL CHARACTER VARYING",
+                "length": 150,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Descripcion"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Estatus",
+                "type": "NATIONAL CHARACTER VARYING",
+                "length": 255,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "'Activo'",
+                "comment": "",
+                "oldName": "Estatus"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Registro",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Registro"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Actualizacion",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": true,
+                "defaultType": "Null",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Actualizacion"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "ID"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "bd_nutrimads.usuario",
+            "comment": "",
+            "oldName": "usuario",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Nombre",
+                "type": "NATIONAL CHARACTER VARYING",
+                "length": 45,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Nombre"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Genero",
+                "type": "NATIONAL CHARACTER VARYING",
+                "length": 255,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Genero"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Peso",
+                "type": "FLOAT",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Peso"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Talla",
+                "type": "FLOAT",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Talla"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Nacimiento",
+                "type": "DATE",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Nacimiento"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Estatus",
+                "type": "NATIONAL CHARACTER VARYING",
+                "length": 255,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "'Activo'",
+                "comment": "",
+                "oldName": "Estatus"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Registro",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Registro"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Actualizacion",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": true,
+                "defaultType": "Null",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Actualizacion"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "ID"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "bd_nutrimads.usuario_has_rol",
+            "comment": "",
+            "oldName": "usuario_has_rol",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "usuario_ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "usuario_ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "rol_ID",
+                "type": "INTEGER",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "rol_ID"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Inicio",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Inicio"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Fecha_Fin",
+                "type": "TIMESTAMP",
+                "length": -2147483648,
+                "decimals": -2147483648,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Fecha_Fin"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_usuario_has_rol_rol1",
+                "fields": [
+                  "rol_ID"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "bd_nutrimads.rol",
+                "referencedFields": [
+                  "ID"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": "fk_usuario_has_rol_rol1"
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_usuario_has_rol_usuario1",
+                "fields": [
+                  "usuario_ID"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "bd_nutrimads.usuario",
+                "referencedFields": [
+                  "ID"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": "fk_usuario_has_rol_usuario1"
+              }
+            ],
+            "indexes": [
+              {
+                "objectType": "Index_LOGICAL",
+                "name": "fk_usuario_has_rol_rol1_idx",
+                "fields": [
+                  "rol_ID"
+                ],
+                "type": "Default",
+                "comment": "",
+                "oldName": "fk_usuario_has_rol_rol1_idx"
+              },
+              {
+                "objectType": "Index_LOGICAL",
+                "name": "fk_usuario_has_rol_usuario1_idx",
+                "fields": [
+                  "usuario_ID"
+                ],
+                "type": "Default",
+                "comment": "",
+                "oldName": "fk_usuario_has_rol_usuario1_idx"
+              }
+            ],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "usuario_ID",
+                "rol_ID"
+              ],
+              "oldName": ""
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "diagrams": [
+    {
+      "name": "Diagram 1",
+      "paperWidth": 2,
+      "paperHeight": 1,
+      "tableFont": "Arial Unicode MS",
+      "tableFontSize": 14,
+      "isBalckWhite": false,
+      "showDBSchemaName": false,
+      "showViewRelations": true,
+      "notation": "default",
+      "showFieldComment": false,
+      "showTableComment": false,
+      "shapes": [
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "bd_nutrimads.alimento",
+          "x": 640,
+          "y": 210,
+          "width": 345,
+          "height": 190,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "bd_nutrimads.alimento_has_criterio",
+          "x": 40,
+          "y": 240,
+          "width": 269,
+          "height": 130,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "bd_nutrimads.componente",
+          "x": 1260,
+          "y": 210,
+          "width": 333,
+          "height": 190,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "bd_nutrimads.componente_has_alimento",
+          "x": 1290,
+          "y": 30,
+          "width": 306,
+          "height": 130,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "bd_nutrimads.consumo",
+          "x": 680,
+          "y": 630,
+          "width": 268,
+          "height": 190,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "bd_nutrimads.consumo_has_alimento",
+          "x": 670,
+          "y": 450,
+          "width": 283,
+          "height": 130,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "bd_nutrimads.criterio",
+          "x": 30,
+          "y": 880,
+          "width": 308,
+          "height": 210,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "bd_nutrimads.criterio_has_usuario",
+          "x": 390,
+          "y": 900,
+          "width": 261,
+          "height": 130,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "bd_nutrimads.factor",
+          "x": 1290,
+          "y": 910,
+          "width": 290,
+          "height": 150,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "bd_nutrimads.factor_has_componente",
+          "x": 1290,
+          "y": 720,
+          "width": 286,
+          "height": 130,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "bd_nutrimads.factor_has_usuario",
+          "x": 990,
+          "y": 900,
+          "width": 252,
+          "height": 130,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "bd_nutrimads.rol",
+          "x": 660,
+          "y": 1320,
+          "width": 308,
+          "height": 170,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "bd_nutrimads.usuario",
+          "x": 670,
+          "y": 870,
+          "width": 290,
+          "height": 230,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "bd_nutrimads.usuario_has_rol",
+          "x": 700,
+          "y": 1140,
+          "width": 231,
+          "height": 130,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        }
+      ],
+      "layers": [],
+      "relations": [
+        {
+          "name": "fk_alimento_has_criterio_alimento",
+          "sourceTableName": "bd_nutrimads.alimento_has_criterio",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 324,
+              "y": 310
+            },
+            {
+              "x": 625,
+              "y": 310
+            }
+          ],
+          "label": {
+            "x": 320,
+            "y": 312,
+            "width": 234,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_ComponenteAlimento",
+          "sourceTableName": "bd_nutrimads.componente",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1245,
+              "y": 310
+            },
+            {
+              "x": 1000,
+              "y": 310
+            }
+          ],
+          "label": {
+            "x": 1261,
+            "y": 312,
+            "width": 176,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_componente_has_alimento_alimento1",
+          "sourceTableName": "bd_nutrimads.componente_has_alimento",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1275,
+              "y": 100
+            },
+            {
+              "x": 820,
+              "y": 100
+            },
+            {
+              "x": 820,
+              "y": 195
+            }
+          ],
+          "label": {
+            "x": 1291,
+            "y": 102,
+            "width": 281,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_componente_has_alimento_componente1",
+          "sourceTableName": "bd_nutrimads.componente_has_alimento",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1450,
+              "y": 175
+            },
+            {
+              "x": 1450,
+              "y": 195
+            }
+          ],
+          "label": {
+            "x": 1458,
+            "y": 165,
+            "width": 307,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "consumo_has_alimento_ibfk_1",
+          "sourceTableName": "bd_nutrimads.consumo_has_alimento",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 820,
+              "y": 595
+            },
+            {
+              "x": 820,
+              "y": 615
+            }
+          ],
+          "label": {
+            "x": 828,
+            "y": 585,
+            "width": 210,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "consumo_has_alimento_ibfk_2",
+          "sourceTableName": "bd_nutrimads.consumo_has_alimento",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 820,
+              "y": 435
+            },
+            {
+              "x": 820,
+              "y": 415
+            }
+          ],
+          "label": {
+            "x": 828,
+            "y": 445,
+            "width": 210,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_alimento_has_criterio_criterio1",
+          "sourceTableName": "bd_nutrimads.alimento_has_criterio",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 190,
+              "y": 385
+            },
+            {
+              "x": 190,
+              "y": 865
+            }
+          ],
+          "label": {
+            "x": 198,
+            "y": 375,
+            "width": 229,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_criterio_has_usuario_criterio1",
+          "sourceTableName": "bd_nutrimads.criterio_has_usuario",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 375,
+              "y": 970
+            },
+            {
+              "x": 353,
+              "y": 970
+            }
+          ],
+          "label": {
+            "x": 391,
+            "y": 972,
+            "width": 219,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_factor_has_componente_componente1",
+          "sourceTableName": "bd_nutrimads.factor_has_componente",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1450,
+              "y": 705
+            },
+            {
+              "x": 1450,
+              "y": 415
+            }
+          ],
+          "label": {
+            "x": 1458,
+            "y": 715,
+            "width": 286,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_factor_has_componente_factor1",
+          "sourceTableName": "bd_nutrimads.factor_has_componente",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1450,
+              "y": 865
+            },
+            {
+              "x": 1450,
+              "y": 895
+            }
+          ],
+          "label": {
+            "x": 1458,
+            "y": 855,
+            "width": 239,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_factor_has_usuario_factor1",
+          "sourceTableName": "bd_nutrimads.factor_has_usuario",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1257,
+              "y": 970
+            },
+            {
+              "x": 1275,
+              "y": 970
+            }
+          ],
+          "label": {
+            "x": 1253,
+            "y": 972,
+            "width": 203,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "FK_consumo_usuario",
+          "sourceTableName": "bd_nutrimads.consumo",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 820,
+              "y": 835
+            },
+            {
+              "x": 820,
+              "y": 855
+            }
+          ],
+          "label": {
+            "x": 828,
+            "y": 825,
+            "width": 148,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_criterio_has_usuario_usuario1",
+          "sourceTableName": "bd_nutrimads.criterio_has_usuario",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 666,
+              "y": 970
+            },
+            {
+              "x": 655,
+              "y": 970
+            }
+          ],
+          "label": {
+            "x": 662,
+            "y": 972,
+            "width": 222,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_factor_has_usuario_usuario1",
+          "sourceTableName": "bd_nutrimads.factor_has_usuario",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 975,
+              "y": 970
+            },
+            {
+              "x": 975,
+              "y": 970
+            }
+          ],
+          "label": {
+            "x": 991,
+            "y": 972,
+            "width": 214,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_usuario_has_rol_rol1",
+          "sourceTableName": "bd_nutrimads.usuario_has_rol",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 820,
+              "y": 1285
+            },
+            {
+              "x": 820,
+              "y": 1305
+            }
+          ],
+          "label": {
+            "x": 828,
+            "y": 1275,
+            "width": 161,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_usuario_has_rol_usuario1",
+          "sourceTableName": "bd_nutrimads.usuario_has_rol",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 820,
+              "y": 1125
+            },
+            {
+              "x": 820,
+              "y": 1115
+            }
+          ],
+          "label": {
+            "x": 828,
+            "y": 1135,
+            "width": 193,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        }
+      ],
+      "viewRelations": []
+    }
+  ]
+}
