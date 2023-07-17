@@ -14,13 +14,10 @@ class EstatusEnum(str, Enum):
     Inactivo = 'Inactivo'
 
 class Usuario(BaseModel):
-    ID: Optional[int]
     Nombre: str
     Genero: GeneroEnum
     Peso: float
     Talla: float
     Fecha_Nacimiento: date
     Estatus: EstatusEnum
-    Fecha_Registro: datetime
-    Fecha_Actualizacion: Optional[datetime]
 
