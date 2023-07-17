@@ -169,6 +169,6 @@ La interfaz de usuario en el entorno de Alexa se basa principalmente en interacc
 
 ### Diagrama de Gantt
 
-|    ![Imagen 1](https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/gantt.jpg?raw=true)    |    ![Imagen 2](https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/diagramaGantt.jpg?raw=true)    |
-| :----------------------------------: | :----------------------------------: |
-|          Tareas         |         Diagrama          |
+<p align="center">
+  <img src="https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/arquitecturaGantt.jpg?raw=true" alt="Diagrama de Gantt">
+</p>
