@@ -18,7 +18,7 @@ USE `bd_nutrimads`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `alimento`
+-- Table structure for table `alimentoo`
 --
 
 DROP TABLE IF EXISTS `alimento`;
