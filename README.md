@@ -166,3 +166,9 @@ Puede ser accedida y utilizada en una amplia gama de dispositivos, incluyendo co
 ***Voice Assistant Alexa:***
 La interfaz de usuario en el entorno de Alexa se basa principalmente en interacciones de voz. Los usuarios interactúan con la aplicación utilizando comandos de voz para realizar acciones, hacer preguntas o recibir información.
 <div/>
+
+### Diagrama de Gantt
+
+<p align="center">
+  <img src="https://github.com/DaniArroyo104/NUTRIMADS_utileria/blob/main/arquitecturaGantt.jpg?raw=true" alt="Diagrama de Gantt">
+</p>
