@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from config.db import engine, conn
 from models.nutrimads import usuario
-from schemas.nutrimads import Usuario
+from schemas.nutrimads import Usuario, EstatusEnum
 
 router = APIRouter()
 
@@ -68,13 +68,11 @@ def actualizarUsuario(usuarios: Usuario, ID):
     if res.get("status") == "No existe ese usuario":
         return res
     else:
-        result = conn.execute(usuario.update().values(dict(usuarios)).where(usuario.c.ID == ID)).last_updated_params()
+        result = conn.execute(
+            usuario.update().values(dict(usuarios)).where(usuario.c.ID == ID)
+        ).last_updated_params()
         conn.commit()
     return result
-
-
-
-
 
 
 @router.delete("/delete/{id_usuario}")
@@ -86,4 +84,18 @@ def eliminarUsuario(id_usuario):
         conn.execute(usuario.delete().where(usuario.c.ID == id_usuario))
         conn.commit()
         res = {"status": "Usuario eliminado con éxito"}
+        return res
+
+
+@router.put("/status/{id_usuario}")
+def cambiarEstatusUsuario(id_usuario: int, estatus: EstatusEnum):
+    res = obtenerUsuario(id_usuario)
+    if res.get("status") == "No existe ese usuario":
+        return res
+    else:
+        conn.execute(
+            usuario.update().values(Estatus=estatus).where(usuario.c.ID == id_usuario)
+        )
+        conn.commit()
+        res = {"status": f"Estatus del usuario actualizado a {estatus.value} con éxito"}
         return res

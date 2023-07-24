@@ -5,13 +5,15 @@ from typing import Optional
 
 
 class GeneroEnum(str, Enum):
-    Femenino = 'Femenino'
-    Masculino = 'Masculino'
-    No_Binario = 'No_Binario'
+    Femenino = "Femenino"
+    Masculino = "Masculino"
+    No_Binario = "No_Binario"
+
 
 class EstatusEnum(str, Enum):
-    Activo = 'Activo'
-    Inactivo = 'Inactivo'
+    Activo = "Activo"
+    Inactivo = "Inactivo"
+
 
 class Usuario(BaseModel):
     Nombre: str
@@ -19,5 +21,4 @@ class Usuario(BaseModel):
     Peso: float
     Talla: float
     Fecha_Nacimiento: date
-    Estatus: EstatusEnum
-
+    Estatus: Optional[EstatusEnum] = EstatusEnum.Activo
