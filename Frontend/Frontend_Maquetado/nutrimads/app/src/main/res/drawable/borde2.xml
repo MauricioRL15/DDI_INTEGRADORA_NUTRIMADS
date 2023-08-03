@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <shape xmlns:android="http://schemas.android.com/apk/res/android">
+        <!-- Fondo del borde -->
+
+        <solid android:color="#4CAF50" />
+
+        <!-- Borde -->
+        <stroke
+            android:width="2dp"
+            android:color="#4CAF50"
+            /><!-- Ancho del borde en dp -->
+        <!-- Radio de las esquinas (opcional) -->
+        <corners android:radius="8dp" /> <!-- Puedes ajustar el radio a tu preferencia en dp -->
+    </shape>
