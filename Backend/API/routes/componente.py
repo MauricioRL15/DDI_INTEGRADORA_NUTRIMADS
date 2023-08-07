@@ -1,33 +1,24 @@
-from fastapi import APIRouter, HTTPException, Depends
-from sqlalchemy import select
+from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from config.db import engine, get_db
-from models.nutrimads import ComponenteHasAlimento, componente, alimento
-from schemas.alimentos import Alimento
-from schemas.componente import Componente
+from schemas.componente import Componente  
+from config.db import get_db
+from models.nutrimads import componente
 
-router_alimentos = APIRouter()
+router = APIRouter()
 
-@router_alimentos.get("/calorias/{alimento_nombre}")
-def calcular_calorias(alimento_nombre: str, db: Session = Depends(get_db)):
-    # Obtener el ID del alimento
-    stmt = select(alimento.c.ID).where(alimento.c.Nombre == alimento_nombre)
-    result = db.execute(stmt).fetchone()
-    if result is None:
-        raise HTTPException(status_code=404, detail="Alimento no encontrado")
-
-    alimento_id = result[0]
-
-    # Obtener los componentes del alimento
-    stmt = select(ComponenteHasAlimento.c.componente_ID).where(ComponenteHasAlimento.c.alimento_ID == alimento_id)
-    componentes_ids = [row[0] for row in db.execute(stmt).fetchall()]
-
-    # Obtener los valores nutricionales de los componentes y calcular las calorías
-    total_calorias = 0
-    for componente_id in componentes_ids:
-        stmt = select(componente).where(componente.c.ID == componente_id)
-        componente_info = db.execute(stmt).fetchone()
-        if componente_info:
-            total_calorias += componente_info.Valor_calorico
-
-    return {"alimento": alimento_nombre, "calorias": total_calorias} 
+@router.get("/getAllComponentes")
+def obtener_componentes(db: Session = Depends(get_db)):
+    lista_tupla_componentes = db.execute(componente.select()).fetchall()
+    lista_diccionario_componentes = []
+    for tupla_componente in lista_tupla_componentes:
+        diccionario_componente = {
+            "ID": tupla_componente[0],
+            "Nombre": tupla_componente[1],
+            "Componente_Padre":tupla_componente[2],
+            "Unidad_medida": tupla_componente[3],
+            "Estatus": int.from_bytes(tupla_componente[4], byteorder='big'),
+            "Fecha_Registro": tupla_componente[5],  
+            "Fecha_Actualizacion": tupla_componente[6]  
+        }
+        lista_diccionario_componentes.append(diccionario_componente)
+    return lista_diccionario_componentes
