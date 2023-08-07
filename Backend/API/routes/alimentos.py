@@ -30,10 +30,11 @@ def obtenerTodosLosAlimentos(skip: int = Query(0, ge=0)):
             "ID": tupla_alimento[0],
             "Nombre": tupla_alimento[1],
             "Cantidad": tupla_alimento[2],
-            "Grupo_alimenticio": tupla_alimento[3],
-            "Estatus": "Inactivo" if tupla_alimento[4] == 1 else "Activo",
-            "Fecha_Registro": tupla_alimento[5].strftime("%Y-%m-%d %H:%M:%S"),
-            "Fecha_Actualizacion": tupla_alimento[6].strftime("%Y-%m-%d %H:%M:%S") if tupla_alimento[6] else None,
+            "Valor_Calorico" : tupla_alimento[3],
+            "Grupo_alimenticio": tupla_alimento[4],
+            "Estatus": int.from_bytes(tupla_alimento[5], byteorder='big'),
+            "Fecha_Registro": tupla_alimento[6],
+            "Fecha_Actualizacion": tupla_alimento[7],
         }
         for tupla_alimento in lista_tupla_alimentos
     ]

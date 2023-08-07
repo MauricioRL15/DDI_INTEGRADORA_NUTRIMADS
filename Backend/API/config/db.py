@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine, MetaData
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, Session
 from fastapi import Depends
+
 
 engine = create_engine("mysql+pymysql://root:admin@localhost:3306/bd_nutrimads")
 
