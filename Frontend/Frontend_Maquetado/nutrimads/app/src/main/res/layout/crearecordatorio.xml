@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:gravity="center">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nombrerecor"
+        android:hint="Nombre del recordatorio"
+        android:textSize="9dp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        />
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="160dp"
+        android:layout_height="25dp"
+        android:gravity="center_vertical"
+        android:text="Hora"
+        android:drawableLeft="@drawable/calendar_month_black_18dp"
+        android:drawableTint="#4CAF50"
+        android:textSize="9dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:textColor="#FFFFFF"/>
+
+    <EditText
+        android:id="@+id/editTextTime2"
+        android:layout_width="160dp"
+        android:layout_height="25dp"
+        android:ems="10"
+        android:inputType="time"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="160dp"
+        android:layout_height="25dp"
+        android:drawableLeft="@drawable/schedule_black_18dp"
+        android:drawableTint="#4CAF50"
+        android:gravity="center_vertical"
+        android:text="Fecha"
+        android:textSize="9dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:textColor="#FFFFFF"/>
+
+    <EditText
+        android:id="@+id/editTextDate2"
+        android:layout_width="160dp"
+        android:layout_height="25dp"
+        android:ems="10"
+        android:inputType="date"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/borde2"
+        android:src="@drawable/done_black_18dp"
+        android:onClick="irAMenu"
+         />
+
+
+
+
+</LinearLayout>
