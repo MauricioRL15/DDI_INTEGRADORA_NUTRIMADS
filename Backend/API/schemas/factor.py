@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from enum import Enum
-
+from typing import Optional
 
 class FactorEstatusEnum(str, Enum):
     Temprano = 'Temprano'
@@ -11,3 +11,7 @@ class FactorEstatusEnum(str, Enum):
 class Factor(BaseModel):
     Nombre: str
     Estatus: FactorEstatusEnum
+
+class FactorUpdate(BaseModel):
+    Nombre: Optional[str]
+    Estatus: Optional[FactorEstatusEnum]
