@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from enum import Enum
-
+from datetime import datetime
 
 class CantidadEnum(str, Enum):
     Pieza = 'Pieza'
@@ -19,3 +19,11 @@ class Alimento(BaseModel):
     Nombre: str
     Cantidad: CantidadEnum
     Grupo_alimenticio: GrupoAlimenticioEnum
+
+class AlimentoUpdate(BaseModel):
+    Nombre: str
+    Cantidad: str
+    Grupo_alimenticio: GrupoAlimenticioEnum
+    Estatus: int
+    Fecha_Actualizacion: datetime
+

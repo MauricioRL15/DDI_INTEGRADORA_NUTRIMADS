@@ -54,13 +54,14 @@ alimento = Table(
 componente = Table(
     'componente',
     meta,
-    Column("ID",Integer, primary_key=True, autoincrement=True),
+    Column("ID",Integer, primary_key=True, autoincrement=True, nullable=False),
     Column("Nombre",String(50), nullable=False),
-    Column("Componente_Padre",Integer, default=None),
+    Column("Cantidad",Integer, nullable=False),
     Column("Unidad_medida", unidad_medida_enum, nullable=False),
     Column("Estatus", Integer, nullable=False, default=1),
     Column("Fecha_Registro", DateTime, nullable=False, default=datetime.datetime.utcnow),
     Column("Fecha_Actualizacion", DateTime, nullable=True, default=None),
+    Column("Componente_Padre",String(25), default=None)
 )
 
 # Tabla componente_has_alimento
@@ -80,7 +81,7 @@ consumo = Table(
     Column('ID', Integer, primary_key=True, autoincrement=True),
     Column('Cantidad', Float, nullable=False),
     Column('Tipo', tipo_consumo_enum, nullable=False),
-    Column('Estatus', estatus_enum, nullable=False, default='Activo'),
+    Column("Estatus", Integer, nullable=False, default=1),
     Column('Fecha_Registro', DateTime, nullable=False),
     Column('Fecha_Actualizacion', DateTime, nullable=True),
     Column('Usuario_ID', Integer, ForeignKey('usuario.ID'), nullable=False),

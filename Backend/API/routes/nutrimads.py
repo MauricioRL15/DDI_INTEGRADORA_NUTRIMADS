@@ -1,7 +1,9 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException, Depends
 from config.db import engine, conn
 from models.nutrimads import usuario
 from schemas.nutrimads import Usuario, EstatusEnum
+from sqlalchemy.orm import Session
+from config.db import get_db
 
 router = APIRouter()
 
@@ -87,15 +89,20 @@ def eliminarUsuario(id_usuario):
         return res
 
 
-@router.put("/status/{id_usuario}")
-def cambiarEstatusUsuario(id_usuario: int, estatus: EstatusEnum):
-    res = obtenerUsuario(id_usuario)
-    if res.get("status") == "No existe ese usuario":
-        return res
-    else:
-        conn.execute(
-            usuario.update().values(Estatus=estatus).where(usuario.c.ID == id_usuario)
-        )
-        conn.commit()
-        res = {"status": f"Estatus del usuario actualizado a {estatus.value} con éxito"}
-        return res
+@router.put("/update/{ID}")
+def actualizarUsuario(ID: int, usuarios: Usuario, db: Session = Depends(get_db)):
+    # Verificar si el usuario existe
+    existing_user = db.execute(usuario.select().where(usuario.c.ID == ID)).first()
+    if existing_user is None:
+        raise HTTPException(status_code=404, detail="Usuario no encontrado")
+
+    # Actualizar el usuario
+    result = db.execute(
+        usuario.update().values(dict(usuarios)).where(usuario.c.ID == ID)
+    )
+
+    if result.rowcount == 0:
+        raise HTTPException(status_code=500, detail="Error al actualizar el usuario")
+
+    db.commit()
+    return {"status": "Usuario actualizado con éxito"}
