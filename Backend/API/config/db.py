@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker, Session
 from fastapi import Depends
 
 
-engine = create_engine("mysql+pymysql://root:admin@localhost:3306/bd_nutrimads")
+engine = create_engine("mysql+pymysql://root:admin@localhost:3306/bd_nutrimads(2)")
 
 meta = MetaData()
 
