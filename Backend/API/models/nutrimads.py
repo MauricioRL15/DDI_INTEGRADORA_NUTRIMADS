@@ -61,7 +61,7 @@ componente = Table(
     Column("Estatus", Integer, nullable=False, default=1),
     Column("Fecha_Registro", DateTime, nullable=False, default=datetime.datetime.utcnow),
     Column("Fecha_Actualizacion", DateTime, nullable=True, default=None),
-    Column("Componente_Padre",String(25), default=None)
+    Column("Componente_Padre",String(25), nullable=False, default=None)
 )
 
 # Tabla componente_has_alimento

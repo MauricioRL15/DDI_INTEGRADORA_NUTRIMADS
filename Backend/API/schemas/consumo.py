@@ -21,3 +21,7 @@ class ConsumoInsert(BaseModel):
     Cantidad: float
     Tipo: tipo_consumo_enum
     Usuario_ID: int
+
+class ConsumoUpdate(BaseModel):
+    Cantidad: float
+    Tipo: tipo_consumo_enum
