@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from enum import Enum
 
 
-class UnidadMedidaEnum(str, Enum):
+class unidad_medida_enum(str, Enum):
     gramo = 'g'
     microgramo = 'µg'
     miligramo = 'mg'
@@ -14,4 +14,4 @@ class UnidadMedidaEnum(str, Enum):
 
 class Componente(BaseModel):
     Nombre: str
-    Unidad_medida: UnidadMedidaEnum
+    Unidad_medida: unidad_medida_enum
