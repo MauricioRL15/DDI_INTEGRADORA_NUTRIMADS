@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:gravity="center"
+    >
+
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/empresa"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="12dp"
+        android:gravity="left"
+        android:text="Nombre de la empresa
+        “DAMS”"
+        android:textSize="9dp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_marginLeft="5dp"/>
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:id="@+id/logoempresa"
+        android:layout_width="50px"
+        android:layout_height="50px"
+        android:src="@drawable/logoempresa"
+        android:layout_toRightOf="@id/empresa"
+
+        />
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/app"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="Aplicación
+         desarrollada
+         ”NutriMADS”"
+        android:textSize="9dp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_toRightOf="@id/empresa"
+     android:layout_marginLeft="30dp"
+
+        />
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:id="@+id/logoapp"
+        android:layout_width="50px"
+        android:layout_height="50px"
+        android:src="@drawable/logo_transparent"
+        android:layout_toRightOf="@+id/app"
+
+        />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="La misión de nuestra empresa es promover la nutrición saludable al proporcionar a las personas una aplicación que les brinde información precisa y completa sobre el valor nutricional de los alimentos sin procesar. Nos preocupamos profundamente por el bienestar de las personas y creemos que una alimentación equilibrada y consciente es fundamental para una vida saludable."
+        android:textSize="7dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="5dp"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/empresa"/>
+    <TextView
+        android:id="@+id/info2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Equipo directivo de la empresa:"
+        android:textSize="7dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="5dp"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/info"/>
+    <TextView
+        android:id="@+id/info3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Arely Aguilar Farias (DB manager)
+
+                                         Sandra Aguilar Santos (Desarrollador de frontend)
+
+                                Daniel Arroyo Mendez (Documentador)
+
+                                Mauricio Ramirez Lopez (Desarrollador de backend)"
+        android:textSize="7dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="5dp"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/info2"/>
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/borde2"
+        android:onClick="irAMenu"
+        android:src="@drawable/arrow_back_black_18dp"
+        android:layout_below="@+id/info3"
+        />
+
+</RelativeLayout>

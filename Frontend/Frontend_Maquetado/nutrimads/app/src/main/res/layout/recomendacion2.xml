@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:gravity="center">
+    <TextView
+        android:id="@+id/recomendacion1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Consumir una amplia variedad de frutas y verduras de diferentes colores para obtener una variedad de nutrientes y antioxidantes esenciales."
+        android:textSize="10dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="5dp"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/info"/>
+    <TextView
+        android:id="@+id/recomendacion2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" Incluye fuentes de proteínas magras como pollo, pavo, pescado, tofu, legumbres y nueces. La proteína es esencial para el crecimiento y reparación del cuerpo."
+        android:textSize="10dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/recomendacion1"/>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/borde2"
+        android:onClick="irAMenu"
+        android:src="@drawable/arrow_back_black_18dp" />
+
+</LinearLayout>
